@@ -3,175 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yaswanth Reddy - DevOps Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>DevOps Zero To Hero</title>
 
 <style>
-body {
-    margin:0;
-    font-family: 'Inter', sans-serif;
-    background:#0a0a0a;
-    color:#fff;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+color:#e0e0e0
 }
 
-/* NAVBAR */
-.navbar {
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.8);
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    z-index:1000;
+.container{text-align:center;padding:2rem;max-width:640px}
+
+h1{
+font-size:2.5rem;
+background:linear-gradient(90deg,#00d2ff,#7b2ff7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:.5rem
 }
 
-.navbar a {
-    color:#fff;
-    margin:0 10px;
-    text-decoration:none;
+.badge{
+display:inline-block;
+margin:1rem 0;
+padding:.4rem 1.2rem;
+border:1px solid #7b2ff7;
+border-radius:999px;
+font-size:.9rem;
+color:#c4b5fd
 }
 
-/* HERO */
-.hero {
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    flex-direction:column;
+.pipeline{
+margin-bottom:1.5rem;
+font-size:.9rem;
+color:#9ca3af
 }
 
-.hero h1 {
-    font-size:3rem;
+.cards{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap
 }
 
-.hero span {
-    color:#667eea;
+.card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+border-radius:12px;
+padding:1.4rem;
+min-width:150px
 }
 
-/* SECTION */
-section {
-    padding:80px 20px;
+.card span{
+display:block;
+font-size:.7rem;
+color:#9ca3af;
+margin-bottom:.4rem;
+letter-spacing:.1em
 }
 
-.container {
-    max-width:1000px;
-    margin:auto;
-}
-
-/* CARDS */
-.card {
-    background:#111;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-/* BUTTON */
-.btn {
-    background:#667eea;
-    padding:10px 20px;
-    color:#fff;
-    text-decoration:none;
-    border-radius:5px;
-}
-
-/* FOOTER */
-footer {
-    text-align:center;
-    padding:20px;
-    background:#000;
+.card strong{
+font-size:1.2rem;
+color:#f9fafb
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div>Yaswanth</div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>Hi, I'm <span>Yaswanth Reddy</span></h1>
-    <p>DevOps Engineer | AWS | Docker | Kubernetes</p>
-    <a href="#contact" class="btn">Contact Me</a>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
 <div class="container">
-    <h2>About Me</h2>
-    <p>
-        DevOps Engineer passionate about automation, cloud, and CI/CD pipelines.
-        Skilled in AWS, Terraform, Docker, Kubernetes and monitoring tools.
-    </p>
+
+<h1>DevOps Zero To Hero [DevSecOps Live]</h1>
+<div class="badge">Josh Batch 10 (USA Edition BOOOM)</div>
+
+<div class="pipeline">
+Built • Tested • Linted • Deployed via GitHub Actions
 </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<div class="container">
-    <h2>Projects</h2>
+<div class="cards">
+<div class="card">
+<span>Framework</span>
+<strong>Flask 3.1</strong>
+</div>
 
-    <div class="card">
-        <h3>DevOps Pipeline</h3>
-        <p>CI/CD using Jenkins, Docker & AWS</p>
-        <a href="https://github.com/" target="_blank">View</a>
-    </div>
+<div class="card">
+<span>Runtime</span>
+<strong>Python 3.14</strong>
+</div>
 
-    <div class="card">
-        <h3>3-Tier AWS Architecture</h3>
-        <p>Highly scalable architecture using EC2, RDS & ALB</p>
-    </div>
+<div class="card">
+<span>Deploy</span>
+<strong>AWS ECS</strong>
+</div>
+
+<div class="card">
+<span>CI/CD</span>
+<strong>GitHub Actions</strong>
+</div>
+</div>
 
 </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<div class="container">
-    <h2>Contact</h2>
-
-    <form id="form">
-        <input type="text" placeholder="Name" required><br><br>
-        <input type="email" placeholder="Email" required><br><br>
-        <textarea placeholder="Message" required></textarea><br><br>
-        <button class="btn">Send</button>
-    </form>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Yaswanth Reddy</p>
-</footer>
-
-<script>
-// Smooth scroll
-document.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click',function(e){
-        if(this.hash){
-            e.preventDefault();
-            document.querySelector(this.hash).scrollIntoView({behavior:'smooth'});
-        }
-    });
-});
-
-// Form alert
-document.getElementById("form").addEventListener("submit",function(e){
-    e.preventDefault();
-    alert("Message sent!");
-});
-</script>
 
 </body>
 </html>
