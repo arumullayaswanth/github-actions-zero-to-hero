@@ -1,44 +1,29 @@
-name: Portfolio
+name: Deploy HTML file
 
 on:
-    # push:
-    #     branches: [main]
-    workflow_dispatch:
+  push:
+    branches: ["master"]
 
 permissions:
-    pages: write      
-    id-token: write   
-    contents: read
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }} 
+    steps:
+      - uses: actions/checkout@v4
 
-        steps:
-            # get access to your Portfolio code via pre-built actions
-            # clones or checks out the code where this workflow is written
-            # STEP 1
-            - name: Checkout Code 
-              uses: actions/checkout@v4 
+      - uses: actions/configure-pages@v5
 
-            # setup GitHub Pages
-            # STEP 2
-            - name: Setup GitHub Pages
-              uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .   # deploy everything in root (your HTML file)
 
-            # static code artifacts
-            # STEP 3
-            - name: Upload static files
-              uses: actions/upload-pages-artifact@v4
-              with:
-                path: "."
-            
-            # Make page Live
-            # STEP 4
-            - name: Deploy to Github pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      - id: deployment
+        uses: actions/deploy-pages@v4
